@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> header}}
+
+<body>
+  {{!-- {{> navbar }} --}}
+ {{> sidebar}}
+ 
+    <h1 class="mt-4 mb-4 text-center text-primary"> User's Holdings </h1>
+    <div class="table-container">
+      <table class="table table-striped table-bordered">
+        <tr>
+          <th>USER_Id</th>
+          <th>Stock_Symbol</th>
+          <th>Average_Cost</th>
+          <th>Last Traded Price</th>
+          <th>Instrument</th>
+          <th>P and L</th>
+        </tr>
+        {{#each holding}}
+        <tr>
+          <td>{{USER_ID}}</td>
+          <td>{{STOCK_SYMBOL}}</td>
+          <td>{{AVG_COST}}</td>
+          <td>{{LAST_TRADED_PRICE}}</td>
+          <td>{{INSTRUMENT}}</td>
+          <td>{{P_AND_L}}</td>
+        </tr>
+        {{/each}}
+      </table>
+    </div>
+
+
+
+</body>
+
+</html>

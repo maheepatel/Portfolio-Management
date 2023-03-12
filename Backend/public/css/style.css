@@ -1,0 +1,473 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500&family=Rubik:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+/* font-family: 'Noto Sans', sans-serif;
+font-family: 'Rubik', sans-serif; */
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans', sans-serif;
+    outline: none;
+}
+
+body{
+    height: 100vh;
+    width: 100%;
+    font-family: "Montserrat", sans-serif;
+    background-color: white; 
+    /* background-color: #5199E4; */
+}
+
+.container,
+.container-fluid 
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    background-color: white;
+    width: 410px;
+    padding: 30px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px  
+    -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.container .text {
+    font-size: 35px;
+    font-weight: 400;
+    text-align: center;
+    color: #5199E4;
+}
+
+.container form .data {
+    height: 45px;
+    width: 100%;
+    margin: 40px 0;
+}
+.container form {
+    margin-top: -20px;
+}
+
+form .data label {
+    font-size: 18px;
+}
+
+form .data input {
+     height: 100%;
+    width: 100%; 
+   padding-left: 10px; 
+    font-size: 17px;
+    border: 1px solid silver; 
+}
+form .data input:focus {
+    border-color: #5199E4;
+    border-bottom-width: 2px;
+}
+
+form .forget-pass {
+    margin-top: -8px;
+}
+
+form .forget-pass a {
+    color: #5199E4;
+    text-decoration: none;
+}
+form .forget-pass a:hover {
+text-decoration: underline;
+}
+
+form .btn{
+    margin: 30px 0;
+    height: 45px;
+    width: 100%;
+}
+
+form .btn button {
+    height: 100%;
+    width: 100%;
+    background: none;
+    border: none;
+    color: #fff;
+    background: #5199E4;
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+form .signup-link {
+    text-align: center;
+}
+
+form .signup-link a{
+    color: #5199E4;
+    text-decoration: none;
+}
+form .signup-link a:hover {
+    text-decoration: underline;
+}
+
+/* Register page CSS and common for all */
+.container-fluid {
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav{
+    width: 100%;
+    height: 70px;
+    /* background: linear-gradient(120deg, #3C92F6 10%, #58a8fd 90%); */
+    background: #3C92F6;
+    padding: 0px 20px;
+    display: flex;  
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    font-weight: 400;
+    text-decoration: none;
+    font-size: 30px;
+    color: #ffffff;
+    font-family: 'Rubik', sans-serif;
+    padding-left: 60px;
+    cursor: pointer;
+}
+
+nav .menu a {
+    margin: 10px 10px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #fbfbfb;
+}
+
+nav .menu a:hover {
+    text-decoration: underline;
+    color: #6fb4fd;
+    background-color: aliceblue;
+    border-radius: 10px;
+    padding: 10px;
+} 
+
+.container-fluid h2 {
+    font-weight: 500;
+}
+
+.container-fluid h2, .container-fluid h3 {
+    font-weight: 400;
+}
+
+.container-fluid img {
+    width: 200px;
+}
+
+
+.error {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+    padding: 10px;
+}
+
+.good {
+    color: green;
+    text-align: center;
+    padding: 10px;
+}
+
+/* For Home Page */
+/* 
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: white;  
+} */
+
+h4{
+    margin: 20px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.1rem 5rem 2rem;
+    background: linear-gradient(180deg, #3C92F6 10%, #5caafc 90%);
+}
+
+.nav a {
+    text-decoration: none;
+    font-size: 40px;
+    font-weight: 800;
+    color: #fff;
+    margin: 10px;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+}
+
+li {
+    list-style-type: none;
+    margin-left: 3rem;
+    
+}
+
+li > a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.25rem;
+    padding: 10px 10px 10px 10px;
+    font-weight: 500;
+}
+li :hover{
+   color: #6fb4fd;
+   background-color: aliceblue;
+   border-radius: 10px;
+   padding: 10px  ;
+
+}
+.home-container {
+    width: 100%;
+    overflow: hidden;
+    position:  relative;
+    color: #3ca7f4;
+  }
+
+  
+  .image {
+    float: right;
+    width: 900px; 
+    margin-left: 20px;
+    padding: 100px;
+  }
+  
+  .side-text {
+    float: left;
+    width: 50%;
+    text-align: center;
+    padding: 200px;
+    position: absolute;
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+.button{
+  background-color: #3C92F6;
+  border: solid transparent;
+  border-radius: 16px;
+  color: #fff;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 50%;
+  cursor: pointer;
+}
+
+/* footer{
+    margin-top: auto;
+} */
+
+.foot{
+    background-color: #5caafc;
+    height: 18px;
+    padding: 30px;
+    /* text-align: center; */
+    display: flex;
+    justify-content: space-between;
+    margin-top: auto;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50px; 
+}
+.foot .p2{
+     padding-right: 50px;
+}
+.foot .p2 a{
+    text-decoration: none;
+    color: white;
+}
+
+/* side bar CSS */
+/* @import url('https://fonts.googleapis.com/css?family=Rubik&display=swap'); */
+
+
+
+.sidebar{
+   position: fixed;
+   width: 250px;
+   top:0;
+   left: 0;
+   bottom: 0;
+   background: #3C92F6;
+   padding-top: 50px;
+}
+
+.sidebar h1{
+   display: block;
+   padding: 10px 20px;
+   color: #fff;
+   text-decoration: none;
+   font-family: "Rubik";
+   letter-spacing: 2px;
+   font-weight: 400;
+   margin: 0;
+   font-size: 25px;
+   text-transform: uppercase;
+}
+
+.sidebar a{
+   display: block;
+   padding: 10px 20px;
+   color: #D3D3D3;
+   text-decoration: none;
+   font-family: "Rubik";
+   letter-spacing: 2px;
+   margin: 10px 20px;
+}
+
+.sidebar a:hover{
+   color: #fff;
+   margin-left: 40px;
+   transition: 0.8s;
+}
+.head {
+    color: #fff;
+    text-align: center;
+    padding : 0 0 40px;
+}
+.logo {
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 30px;
+    color: #ffffff;
+    font-family: 'Rubik', sans-serif;
+    padding: 20px 30px;
+}
+
+/* css for WhatchList */
+.watchlist{
+    padding-top: 80px;
+    padding-right: 700px;
+    float: right;
+}
+
+.watchlist input{
+    border: none;
+    border-radius: 3px;
+    margin-right: 20px;
+    background-color: rgb(248, 248, 248);
+    
+    }
+    
+   .watchlist button {
+    background-color: transparent;
+    color: rgb(183, 182, 182);
+    border-radius: 2px;
+    font-size: 14px;
+    outline: none;
+    padding: 4px;
+    }
+    
+    .look-up{
+        float: right;
+        height: 400px;
+        width: 700px;
+        background-color: rgb(241, 244, 247);
+         padding: 90px 90px;
+        margin: 50px 400px;
+        /* clip-path: ellipse(130% 90% at 40% 7%); */
+    }
+    
+
+    /* ORDERS CSS */
+
+/* .order-table{
+    display: flex;
+    justify-content: center;
+align-items: center;
+} */
+.order-table {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  .order-table > * {
+    width: 100%;
+  }
+  hr {
+    clear: both;
+    width: 60%;
+    margin-left: 16.5%;
+    /* Set any other styles for the divider here */
+  }
+
+.table-container{
+    width: 80%;
+    float: right;
+    padding: 10px;
+    padding-left: 140px;
+}
+
+.table{
+width: 80%;
+height: 80%;
+/* display: flex;
+justify-content: center;
+align-items: center; }  */
+}
+.order-table-output{
+width: 90%;
+padding-left: 400px;
+
+}
+
+
+.order-input{
+    height: 60%;
+    width: 60%;
+    float: right;
+    padding: 20px;
+    padding-left: 500px;
+    margin: 10px;
+
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+}
+
+.order-input h2{
+    text-align: center;
+}
+
+.order-input input{
+    padding: 5px;
+    margin: 4px;
+}
+
+.order-input .btn {
+width: 60%;
+border-radius: 6px;
+background-color: #3C92F6;
+align-items: center;
+justify-content: center;
+}

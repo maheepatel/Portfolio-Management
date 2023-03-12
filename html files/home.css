@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: white; 
+}
+
+h3{
+    margin: 10px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1.1rem 5rem 2rem;
+    background: linear-gradient(180deg, #3C92F6 10%, #5caafc 90%);
+}
+
+.nav a {
+    text-decoration: none;
+    font-size: 40px;
+    font-weight: 800;
+    color: #fff;
+    margin: 10px;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    margin: 10px;
+}
+
+li {
+    list-style-type: none;
+    margin-left: 3rem;
+    
+}
+
+li > a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.25rem;
+    padding: 10px 10px 10px 10px;
+    font-weight: 500;
+}
+li :hover{
+   color: #6fb4fd;
+   background-color: aliceblue;
+   border-radius: 10px;
+   padding: 10px;
+
+}
+.home-container {
+    width: 100%;
+    overflow: hidden;
+    position:  relative;
+    color: #adadad;
+  }
+
+  
+  .image {
+    float: right;
+    width: 900px; 
+    margin-left: 20px;
+    padding: 100px;
+  }
+  
+  .side-text {
+    float: left;
+    width: 50%;
+    text-align: center;
+    padding: 200px;
+    position: absolute;
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+.button{
+  background-color: #3C92F6;
+  border: solid transparent;
+  border-radius: 16px;
+  color: #fff;
+  display: inline-block;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 13px 16px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 50%;
+}
+
+.foot{
+    background-color: #5caafc;
+    height:60px;
+    padding: 40px;
+    text-align: center;
+}
+

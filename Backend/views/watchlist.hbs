@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> header}}
+
+<body>
+  {{!-- {{> navbar }} --}}
+ {{> sidebar}}
+
+<div class="watchlist">
+  <h1>Watchlist</h1>
+  <input type="text" id="stock-symbol-input" name="stock-symbol" placeholder="Enter stock symbol">
+  <button type="submit" onclick="displayStockData()">Look Up</button>
+</div>
+<div class="look-up">
+        <h1 id="stock-symbol"></h1>
+        <!-- <p id="stock-symbol"></p> -->
+        <p id="stock-open"></p>
+        <p id="stock-high"></p>
+        <p id="stock-low"></p>
+        <p id="stock-price"></p>
+        <p id="stock-change"></p>
+    </div>
+
+    <script>
+const dotenv = require("dotenv");
+ dotenv.config({
+    path: "./.env",
+ })
+
+      function displayStockData() {
+  const apiKey= "process.env.API_KEY";
+
+  const symbol = document.getElementById("stock-symbol-input").value.toUpperCase();
+  const url = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${symbol}&apikey=${apiKey}`;
+
+  fetch(url)
+    .then((response) => response.json())
+    .then((data) => {
+      const globalQuote = data["Global Quote"];
+      const stockSymbol = globalQuote["01. symbol"];
+      const stockOpen = globalQuote["02. open"];
+      const stockHigh = globalQuote["03. high"];
+      const stockLow = globalQuote["04. low"];
+      const stockPrice = globalQuote["05. price"];
+      const stockChange = globalQuote["09. change"];
+
+      if (stockChange > 0) {
+        document.getElementById("stock-change").style.color = "green";
+      } else if (stockChange < 0) {
+        document.getElementById("stock-change").style.color = "red";
+      }
+
+      document.getElementById(
+        "stock-symbol"
+      ).innerText = `Stock Symbol: ${stockSymbol}`;
+      document.getElementById("stock-open").innerText = `Open: ${stockOpen}`;
+      document.getElementById("stock-high").innerText = `High: ${stockHigh}`;
+      document.getElementById("stock-low").innerText = `Low: ${stockLow}`;
+      document.getElementById("stock-price").innerText = `Price: ${stockPrice}`;
+      document.getElementById(
+        "stock-change"
+      ).innerText = `Change in value: ${stockChange}`;
+    })
+
+    .catch((error) => console.error(error));
+}
+    </script>
+</body>
+
+
+ 
+
+</html>

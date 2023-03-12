@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+{{> header}}
+
+<body>
+  {{!-- {{> navbar }} --}}
+ {{> sidebar}}
+ 
+    <h1 class="mt-4 mb-4 text-center text-primary"> Stocks that we support </h1>
+    <div class="table-container">
+      <table class="table table-striped table-bordered">
+        <tr>
+          <th>Stock_Symbol</th>
+          <th>Company Name</th>
+          <th>Change in Price</th>
+        </tr>
+        {{#each stock}}
+        <tr>
+          <td>{{STOCK_SYMBOL}}</td>
+          <td>{{COMPANY_NAME}}</td>
+          <td>{{CHANGE_IN_PRICE}}</td>
+        {{/each}}
+      </table>
+    </div>
+
+
+
+</body>
+
+</html>
