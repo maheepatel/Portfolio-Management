@@ -3,58 +3,22 @@
 {{> header}}
 
 <body>
-  {{!-- {{> navbar }} --}}
+
  {{> sidebar}}
-  {{!-- <div class="sidebar">
-    <div class="logo">
-      <h1>Stocki</h1>
+
+  <div class="account-details">
+    <h2>Account Details</h2>
+    <div>
+      <h3>User Id: {{account_details.User_id}}</h3>
+      <p>User Id: {{account_details.User_id}}</p>
+      <h3>PAN Number:{{account_details.stock-symbol}}</h3>
+      <h3>Phone Number:{{account_detail.PHONE}}</h3>
+      <h3>Demat Number:{{account_detail.DEMAT}}</h3>
+      <h3>Bank Account Num:{{account_detail.BANK_ACT_NUM}}</h3>
+
     </div>
-    <a href="">Portfolio</a>
-    <a href="">Orders</a>
-    <a href="">Holdings</a>
-    <a href="">Watch-list</a>
-    <a href="">Profile</a>
-    <a href="/auth/logout">Logout</a>
-  </div> --}}
-
-
-  <div class="container-fluid">
-    <h2>User's Profile</h2>
-    <img src="/images/profile2.png" alt="" />
-    <h3>Name : {{user.name}}</h3>
-    <h3>Email : {{user.email}}</h3>
-    <h3>Id : {{user.Id}}</h3>
   
   </div>
 </body>
 
 </html>
-
-{{!--
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="sidebar.css">
-  <title>stocki</title>
-</head> --}}
-{{!--
-
-<body>
-  <div class="sidebar">
-    <h1 class="head">Stocki</h1>
-    <a href="">Portfolio</a>
-    <a href="">Orders</a>
-    <a href="">Holdings</a>
-    <a href="">Watch-list</a>
-    <a href="">Profile</a>
-    <a href="">logout</a>
-  </div>
-
-
-</body>
-
-</html> --}}

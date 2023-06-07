@@ -37,49 +37,11 @@ router.get("/register",(req, res) => {
 
 router.get("/", userController.isLoggedIn,(req, res) => {
 
-        res.render("home");
-
-
-
-        // const https = require('https');
-/*
-const apiKey = '4PWJFHCIPVWO07VP';
-const symbols = ['AAPL', 'GOOG', 'MSFT', 'AMZN']; // Replace with the stock symbols you want to look up   
-const stockData = [];
-
-symbols.forEach((symbol) => {
-  const url = `https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${symbol}&apikey=${apiKey}`;
-
-  https.get(url, (res) => {
-    let data = '';
-    res.on('data', (chunk) => {
-      data += chunk;
-    });
-    res.on('end', () => {
-        const quoteData = JSON.parse(data)["Global Quote"];
-        stockData.push(quoteData);
-        if(stockData.length === symbols.length){
-            console.log(stockData);
-        }
-    });
-  }).on('error', (err) => {
-    console.log('Error: ' + err.message);
-  });
-});*/
-
-
-  
-  
+        res.render("home");  
 });
 
 
-router.get("/profile", userController.isLoggedIn,(req, res) => {
-    if(req.user) {
-        res.render("profile",{user: req.user});
-    } else {
-        res.redirect("/login");
-    }
-});
+
 
 // router.get("/orders", userController.isLoggedIn,(req, res) => {
 //     if(req.user) {
@@ -126,6 +88,28 @@ router.post("/orders",userController.isLoggedIn, (req, res) => {
  
   });
   
+  router.get("/profile", userController.isLoggedIn, userController.account_details,async (req, res) => {
+    if(req.user) {
+        res.render("profile",{account_details: req.account_details});
+        console.log(req.account_details);
+    } else {
+        res.redirect("/login");
+    }
+});
+
+
+
+
+
+  //need to change here from orderes to portfolio
+  router.get("/portfolio", userController.isLoggedIn, userController.orders,async (req, res) => {
+    if(req.user) {
+      res.render("portfolio", {user: req.user});
+      // res.send(req.orders[1]);
+  } else {
+      res.redirect("/login");
+  }
+  });
   router.get("/orders", userController.isLoggedIn, userController.orders,async (req, res) => {
     if(req.user) {
       res.render("orders", {order: req.orders});
@@ -159,5 +143,7 @@ router.get("/watchlist", userController.isLoggedIn,(req, res) => {
     res.redirect("/login");
 }
 });
+
+
 
 module.exports = router;

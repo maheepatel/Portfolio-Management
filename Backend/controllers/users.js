@@ -182,21 +182,54 @@ exports.orders = async (req, res, next) =>
   );  
 }
 
-exports.holdings = async (req, res, next) =>
-{
-    db.query(
-    "select * from holdings",
-    (err, results, fields) => {
-      console.log(results);
-      // console.log(fields);
-      if (!results) {
-        return next();
+
+exports.holdings = async (req, res, next) => {
+  const user_id = req.user.Id;
+
+  db.query(
+    "UPDATE holdings h JOIN (SELECT stock_symbol, AVG(Purchase_price) AS avg_price FROM orders WHERE USER_ID = ? GROUP BY stock_symbol) o ON h.stock_symbol = o.stock_symbol SET h.Avg_Cost = o.avg_price WHERE h.USER_ID = ?",
+    [user_id, user_id],
+    (err, results1, fields) => {
+      if (err) {
+        return next(err);
       }
-      req.holdings = results;
-      return next();
+
+      db.query(
+        "SELECT * FROM holdings WHERE USER_ID = ?",
+        [user_id],
+        (err, results2, fields) => {
+          if (err) {
+            return next(err);
+          }
+
+          console.log(results2);
+          req.holdings = results2;
+          return next();
+        }
+      );
     }
-  );  
+  );
 }
+
+
+
+// exports.holdings = async (req, res, next) =>
+// {
+//   const user_id = req.user.Id;
+//     db.query(
+//     "select * from holdings JOIN users ON holdings.USER_ID = users.Id WHERE holdings.USER_ID =? AND users.Id=?",
+//     [user_id, user_id],
+//     (err, results, fields) => {
+//       console.log(results);
+//       // console.log(fields);
+//       if (!results) {
+//         return next();
+//       }
+//       req.holdings = results;
+//       return next();
+//     }
+//   );  
+// }
 
 exports.stocks = async (req, res, next) =>
 {
@@ -209,6 +242,27 @@ exports.stocks = async (req, res, next) =>
         return next();
       }
       req.stocks = results;
+      return next();
+    }
+  );  
+}
+
+exports.account_details = async (req, res, next) =>
+{
+  const user_id = req.user.Id;
+  db.query(
+  // "SELECT * FROM ACCOUNT_DETAILS JOIN users ON ACCOUNT_DETAILS.USER_ID = users.Id WHERE ACCOUNT_DETAILS.USER_ID =? AND users.Id=?",
+  "SELECT * FROM ACCOUNT_DETAILS ",
+  // [user_id, user_id],
+    (err, results, fields) => {
+      // console.log(results);
+      // console.log(fields);
+      if (!results) {
+        return next();
+      }
+      // console.log(results);
+      req.account_details = results;
+      // console.log(  req.account_details);
       return next();
     }
   );  
