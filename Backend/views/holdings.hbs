@@ -16,6 +16,7 @@
           <th>Last Traded Price</th>
           <th>Instrument</th>
           <th>P and L</th>
+          <th>Actions</th>
         </tr>
         {{#each holding}}
         <tr>
@@ -25,6 +26,11 @@
           <td>{{LAST_TRADED_PRICE}}</td>
           <td>{{INSTRUMENT}}</td>
           <td>{{P_AND_L}}</td>
+            <td>
+            <a href="/holdings/delete/{{STOCK_SYMBOL}}"
+           class="btn btn-danger btn-sm">Delete</a>
+       
+          </td>
         </tr>
         {{/each}}
       </table>

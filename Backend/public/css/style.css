@@ -2,13 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500&family=Rubik:wght@400;500&family=Tilt+Neon&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500&family=Rubik:wght@400;500&family=Sono&family=Tilt+Neon&display=swap');
 
 /* font-family: 'Noto Sans', sans-serif;
 font-family: 'Rubik', sans-serif; */
 
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -16,17 +16,16 @@ font-family: 'Rubik', sans-serif; */
     outline: none;
 }
 
-body{
+body {
     height: 100vh;
     width: 100%;
     font-family: "Montserrat", sans-serif;
-    background-color: white; 
+    background-color: white;
     /* background-color: #5199E4; */
 }
 
 .container,
-.container-fluid 
-{
+.container-fluid {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -35,8 +34,7 @@ body{
     background-color: white;
     width: 410px;
     padding: 30px;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px  
-    -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 
 .container .text {
@@ -51,6 +49,7 @@ body{
     width: 100%;
     margin: 40px 0;
 }
+
 .container form {
     margin-top: -20px;
 }
@@ -60,12 +59,13 @@ form .data label {
 }
 
 form .data input {
-     height: 100%;
-    width: 100%; 
-   padding-left: 10px; 
+    height: 100%;
+    width: 100%;
+    padding-left: 10px;
     font-size: 17px;
-    border: 1px solid silver; 
+    border: 1px solid silver;
 }
+
 form .data input:focus {
     border-color: #5199E4;
     border-bottom-width: 2px;
@@ -79,11 +79,12 @@ form .forget-pass a {
     color: #5199E4;
     text-decoration: none;
 }
+
 form .forget-pass a:hover {
-text-decoration: underline;
+    text-decoration: underline;
 }
 
-form .btn{
+form .btn {
     margin: 30px 0;
     height: 45px;
     width: 100%;
@@ -107,10 +108,11 @@ form .signup-link {
     text-align: center;
 }
 
-form .signup-link a{
+form .signup-link a {
     color: #5199E4;
     text-decoration: none;
 }
+
 form .signup-link a:hover {
     text-decoration: underline;
 }
@@ -123,13 +125,13 @@ form .signup-link a:hover {
     align-items: center;
 }
 
-nav{
+nav {
     width: 100%;
     height: 70px;
     /* background: linear-gradient(120deg, #3C92F6 10%, #58a8fd 90%); */
     background: #3C92F6;
     padding: 0px 20px;
-    display: flex;  
+    display: flex;
     justify-content: space-between;
     align-items: center;
 }
@@ -157,13 +159,14 @@ nav .menu a:hover {
     background-color: aliceblue;
     border-radius: 10px;
     padding: 10px;
-} 
+}
 
 .container-fluid h2 {
     font-weight: 500;
 }
 
-.container-fluid h2, .container-fluid h3 {
+.container-fluid h2,
+.container-fluid h3 {
     font-weight: 400;
 }
 
@@ -198,7 +201,7 @@ body {
     background-color: white;  
 } */
 
-h4{
+h4 {
     margin: 20px;
 }
 
@@ -227,39 +230,41 @@ ul {
 li {
     list-style-type: none;
     margin-left: 3rem;
-    
+
 }
 
-li > a{
+li>a {
     text-decoration: none;
     color: #fff;
     font-size: 1.25rem;
     padding: 10px 10px 10px 10px;
     font-weight: 500;
 }
-li :hover{
-   color: #6fb4fd;
-   background-color: aliceblue;
-   border-radius: 10px;
-   padding: 10px  ;
+
+li :hover {
+    color: #6fb4fd;
+    background-color: aliceblue;
+    border-radius: 10px;
+    padding: 10px;
 
 }
+
 .home-container {
     width: 100%;
     overflow: hidden;
-    position:  relative;
+    position: relative;
     color: #3ca7f4;
-  }
+}
 
-  
-  .image {
+
+.image {
     float: right;
-    width: 900px; 
+    width: 900px;
     margin-left: 20px;
     padding: 100px;
-  }
-  
-  .side-text {
+}
+
+.side-text {
     float: left;
     width: 50%;
     text-align: center;
@@ -268,33 +273,34 @@ li :hover{
     font-size: 20px;
 
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  }
-  .side-text h4{
+}
+
+.side-text h4 {
     font-family: 'Tilt Neon', cursive;
     font-size: 30px;
     font-weight: 700;
-  }
+}
 
-.button{
-  background-color: #3C92F6;
-  border: solid transparent;
-  border-radius: 16px;
-  color: #fff;
-  display: inline-block;
-  font-size: 15px;
-  font-weight: 700;
-  padding: 13px 16px;
-  text-align: center;
-  text-transform: uppercase;
-  width: 50%;
-  cursor: pointer;
+.button {
+    background-color: #3C92F6;
+    border: solid transparent;
+    border-radius: 16px;
+    color: #fff;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 13px 16px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 50%;
+    cursor: pointer;
 }
 
 /* footer{
     margin-top: auto;
 } */
 
-.foot{
+.foot {
     background-color: #f3f3f4;
     height: 18px;
     padding: 30px;
@@ -306,12 +312,14 @@ li :hover{
     position: absolute;
     bottom: 0;
     width: 100%;
-    height: 50px; 
+    height: 50px;
 }
-.foot .p2{
-     padding-right: 50px;
+
+.foot .p2 {
+    padding-right: 50px;
 }
-.foot .p2 a{
+
+.foot .p2 a {
     text-decoration: none;
     color: #3C92F6;
 }
@@ -321,49 +329,51 @@ li :hover{
 
 
 
-.sidebar{
-   position: fixed;
-   width: 250px;
-   top:0;
-   left: 0;
-   bottom: 0;
-   background: #3C92F6;
-   padding-top: 50px;
+.sidebar {
+    position: fixed;
+    width: 250px;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    background: #3C92F6;
+    padding-top: 50px;
 }
 
-.sidebar h1{
-   display: block;
-   padding: 10px 20px;
-   color: #fff;
-   text-decoration: none;
-   font-family: "Rubik";
-   letter-spacing: 2px;
-   font-weight: 400;
-   margin: 0;
-   font-size: 25px;
-   text-transform: uppercase;
+.sidebar h1 {
+    display: block;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    font-family: "Rubik";
+    letter-spacing: 2px;
+    font-weight: 400;
+    margin: 0;
+    font-size: 25px;
+    text-transform: uppercase;
 }
 
-.sidebar a{
-   display: block;
-   padding: 10px 20px;
-   color: #D3D3D3;
-   text-decoration: none;
-   font-family: "Rubik";
-   letter-spacing: 2px;
-   margin: 10px 20px;
+.sidebar a {
+    display: block;
+    padding: 10px 20px;
+    color: #D3D3D3;
+    text-decoration: none;
+    font-family: "Rubik";
+    letter-spacing: 2px;
+    margin: 10px 20px;
 }
 
-.sidebar a:hover{
-   color: #fff;
-   margin-left: 40px;
-   transition: 0.8s;
+.sidebar a:hover {
+    color: #fff;
+    margin-left: 40px;
+    transition: 0.8s;
 }
+
 .head {
     color: #fff;
     text-align: center;
-    padding : 0 0 40px;
+    padding: 0 0 40px;
 }
+
 .logo {
     font-weight: 500;
     text-decoration: none;
@@ -374,82 +384,132 @@ li :hover{
 }
 
 /* CSS for Portfolio */
-.portfolio-header{
+.portfolio-header {
     padding-top: 20px;
-display: flex;
-justify-content: center;
-align-items: center;
-color:#3C92F6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #3C92F6;
 }
 
-.upper-portfolio{
+.upper-portfolio {
     float: right;
     padding-right: 1000px;
     padding-top: 80px;
+    padding-bottom: 20px;
     /* margin: 5px; */
 }
-  .portfolio hr {
-   /* align: center; */
+
+.upper-portfolio p{
+    margin-top: 5px;
+}
+
+.portfolio hr {
+    /* align: center; */
     clear: both;
     width: 80%;
     height: 4px;
     background: #6fb4fd;
+    /* padding-bottom: 20px; */
     /* margin-left: 16.5%; */
     /* Set any other styles for the divider here */
-  }
+}
 
-  .middle-portfolio{
-    font-family: monospace;
+/* .middle-portfolio {
+    font-family: sans-serif;
     font-size: 20px;
     float: right;
-    padding-right: 400px;
+    padding-right: 1250px;
     padding-top: 80px;
     justify-content: space-between;
     display: flex;
-}
-.middle-portfolio .portfolio-text{
-    padding: 0px 40px;
+    background-color: white;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+    width: 300px;  
+} */
+
+.middle-portfolio{
+    font-size: 20px;
+    float: right;
+    padding-right: 220px;
+    padding-top: 50px;
+    justify-content: space-between;
+    display: flex;
+   
 }
 
+/* width: 10px; */
+/* padding: 30px; */
+/* position: absolute; */
+/* top: 50%;
+left: 50%; */
+/* transform: translate(-50%, -50%); */
+/* display: block; */
+
+/* .label-value {
+    display: flex;
+    flex-direction: column;
+  } */
+.portfolio-text {
+    padding: 10px 50px;
+    width: 200px;
+    /* display: inline-block; */
+    font-family: 'sono', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+.portfolio-text p{
+    font-family: 'Sono', sans-serif;
+    /* color: #fff; */
+    
+}
+.portfolio-text span{
+    /* background-color: #8fc2f9; */
+   margin-top: 5px;
+   font-size: 22px;
+   font-weight: 500;
+}
+
+
 /* css for WhatchList */
-.watchlist{
+.watchlist {
     padding-top: 80px;
     padding-right: 700px;
     float: right;
 }
 
-.watchlist input{
+.watchlist input {
     /* border: none; */
     border-radius: 3px;
     margin-right: 20px;
     background-color: rgb(248, 248, 248);
-    }
-    
-.watchlist h1{
-color: #3ca7f4;
 }
 
-   .watchlist button {
+.watchlist h1 {
+    color: #3ca7f4;
+}
+
+.watchlist button {
     background-color: #3C92F6;
     color: white;
     border-radius: 2px;
     font-size: 18px;
-border: none;
+    border: none;
     padding: 4px;
-    }
-    
-    .look-up{
-        float: right;
-        height: 400px;
-        width: 700px;
-        background-color: rgb(241, 244, 247);
-         padding: 90px 90px;
-        margin: 50px 400px;
-        /* clip-path: ellipse(130% 90% at 40% 7%); */
-    }
-    
+}
 
-    /* ORDERS CSS */
+.look-up {
+    float: right;
+    height: 400px;
+    width: 700px;
+    background-color: rgb(241, 244, 247);
+    padding: 90px 90px;
+    margin: 50px 400px;
+    /* clip-path: ellipse(130% 90% at 40% 7%); */
+}
+
+
+/* ORDERS CSS */
 
 /* .order-table{
     display: flex;
@@ -460,44 +520,47 @@ align-items: center;
     display: flex;
     flex-wrap: wrap;
     align-items: flex-start;
-  }
+}
 
-  .order-table > * {
+.order-table>* {
     width: 100%;
-  }
-  hr {
+}
+
+hr {
     clear: both;
     width: 60%;
     margin-left: 16.5%;
     /* Set any other styles for the divider here */
-  }
+}
 
-.table-container{
+.table-container {
     width: 80%;
     float: right;
     padding: 10px;
     padding-left: 140px;
 }
 
-.table{
-width: 80%;
-height: 80%;
-/* display: flex;
+.table {
+    width: 80%;
+    height: 80%;
+    /* display: flex;
 justify-content: center;
 align-items: center; }  */
 }
-.order-table-output{
-width: 90%;
-padding-left: 400px;
+
+.order-table-output {
+    width: 90%;
+    padding-left: 400px;
 
 }
 
-.search-container{
+.search-container {
     float: right;
     padding: 20px;
     padding-right: 500px;
 }
-.order-input{
+
+.order-input {
     height: 60%;
     width: 60%;
     float: right;
@@ -510,32 +573,93 @@ padding-left: 400px;
     align-items: center; */
 }
 
-.order-input h2{
+.order-input h2 {
     text-align: center;
     color: #3C92F6;
 }
 
-.order-input input{
+.order-input input {
     padding: 5px;
     margin: 4px;
 }
 
 
 .order-input .btn {
-width: 60%;
-border-radius: 6px;
-background-color: #3C92F6;
-align-items: center;
-justify-content: center;
+    width: 60%;
+    border-radius: 6px;
+    background-color: #3C92F6;
+    align-items: center;
+    justify-content: center;
 }
 
 
 /* css for account-details */
-.account-details{
+.account-container {
     float: right;
-    padding-right: 700px;
+    padding-right: 800px;
+    margin-top: 40px;
+    width: 1200px;
+}
+.account-details hr{
+    margin-top: 10px;
+    padding-right: 300px;
+    clear: both;
+    width: 900px;
+    height: 4px;
+    background: #6fb4fd;
+}
+.account-details hr{
+    margin-top: 10px;
+    padding-right: 300px;
+    clear: both;
+    width: 900px;
+    height: 4px;
+    background: #6fb4fd;
+}
+.Account-data{
+    padding-top: 20px;
 }
 
-.account-details h2{
+
+.account-container h2 {
     color: #3C92F6;
+}
+
+.account-details{
+    margin-top: 10px;
+}
+
+
+.account-details p{
+    margin-top: 10px;
+    font-size: 16px;
+    /* border-radius: 4px; */
+    /* background-color: #D3D3D3; */
+}
+
+.account-details span{
+    margin-top: 5px;
+    font-family: 'Sono', sans-serif;
+    font-size: 20px;
+}
+.lower-account-details{
+    margin-top: 5px;
+    padding-top: 15px;
+}
+
+
+
+.lower-account-details span{
+    margin-top: 5px;
+    font-family: 'Sono', sans-serif;
+    font-size: 20px;
+    /* background-color: #6fb4fd; */
+    /* border-radius: 6px; */
+}
+.key {
+    background-color: #ececec;
+}
+.value {
+    background-color: #6fb4fd;
+    color: white;
 }

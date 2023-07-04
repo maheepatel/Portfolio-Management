@@ -161,8 +161,46 @@ exports.logout =  (req, res) => {
   res.status(200).redirect("/");
 };
 
+exports.account_details = async (req, res, next) =>
+{
+  const user_id = req.user.Id;
+  db.query(
+  "SELECT * FROM ACCOUNT_DETAILS JOIN users ON ACCOUNT_DETAILS.USER_ID = users.Id WHERE ACCOUNT_DETAILS.USER_ID =? AND users.Id=?",
+  // "SELECT * FROM ACCOUNT_DETAILS ",
+  [user_id, user_id],
+    (err, results,) => {
+      // console.log(results);
+      // console.log(fields);
+      if (!results) {
+        return next();
+      }
+      // console.log(results);
+      req.account_details = results;
+      // console.log(  req.account_details);
+      return next();
+    }
+  );  
+}
 
 
+exports.Portfolio = async (req, res, next) =>
+{
+  const user_id = req.user.Id;
+    db.query(
+    "SELECT * FROM Portfolio JOIN users ON Portfolio.USER_ID = users.Id WHERE Portfolio.USER_ID =? AND users.Id=?",
+    [user_id, user_id],
+    (err, results, fields) => {
+      // console.log(results);
+      // console.log(fields);
+      if (!results) {
+        return next();
+      }
+      req.Portfolio = results;
+      
+      return next();
+    }
+  );  
+}
 
 exports.orders = async (req, res, next) =>
 {
@@ -247,23 +285,3 @@ exports.stocks = async (req, res, next) =>
   );  
 }
 
-exports.account_details = async (req, res, next) =>
-{
-  const user_id = req.user.Id;
-  db.query(
-  // "SELECT * FROM ACCOUNT_DETAILS JOIN users ON ACCOUNT_DETAILS.USER_ID = users.Id WHERE ACCOUNT_DETAILS.USER_ID =? AND users.Id=?",
-  "SELECT * FROM ACCOUNT_DETAILS ",
-  // [user_id, user_id],
-    (err, results, fields) => {
-      // console.log(results);
-      // console.log(fields);
-      if (!results) {
-        return next();
-      }
-      // console.log(results);
-      req.account_details = results;
-      // console.log(  req.account_details);
-      return next();
-    }
-  );  
-}

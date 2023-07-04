@@ -4,21 +4,138 @@
 
 <body>
 
- {{> sidebar}}
+  {{> sidebar}}
 
-  <div class="account-details">
+  <div class="account-container">
     <h2>Account Details</h2>
-    <div>
-      <h3>User Id: {{account_details.User_id}}</h3>
-      <p>User Id: {{account_details.User_id}}</p>
-      <h3>PAN Number:{{account_details.stock-symbol}}</h3>
-      <h3>Phone Number:{{account_detail.PHONE}}</h3>
-      <h3>Demat Number:{{account_detail.DEMAT}}</h3>
-      <h3>Bank Account Num:{{account_detail.BANK_ACT_NUM}}</h3>
-
+    <div class="Account-data">
+      <p>User Name: {{user.name}}</p>
+      <p>User Email: {{user.email}}</p>
     </div>
-  
+
+{{!-- {{#if account_detail}} --}}
+    {{#each account_detail}}
+    <div class="account-details">
+      <p>User Id:{{USER_ID}}</p>
+      <hr>
+      <div class="lower-account-details">
+        <p> <span class="key">PAN Card Number:</span><span class="value"> {{PAN}}</span> </p> 
+        <p> <span class="key">Phone Number:</span><span class="value"> {{PHONE}}</span> </p> 
+        <p> <span class="key">Demat Number:</span><span class="value"> {{DEMAT}}</span> </p> 
+        <p> <span class="key">Bank Account Num: </span><span class="value">{{BANK_ACT_NUM}}</span> </p> 
+        <p>  <span></span> </p>
+        <p>   <span></span></p>
+        <p> <span></span></p>
+      </div>
+    </div>
+    {{/each}}
+      <!-- Update Account Details Form -->
+  {{!-- <h2>Update Account Details</h2>
+  <form action="/update-account-details" method="POST">
+    <input type="hidden" name="account_id" value="{{ account_detail.id }}">
+    <label for="PAN">PAN Card Number:</label>
+<input type="text" id="pan_no" name="PAN" placeholder="PAN No." maxlength="10" pattern="[a-zA-Z]{5}[0-9]{4}[a-zA-Z]{1}" title="Please enter valid PAN number. E.g. AAAAA9999A" required/>
+    <label for="field2">Field 2:</label>
+    <input type="text" name="field2" value="{{ account_detail.field2 }}">
+    <label for="field3">Field 3:</label>
+    <input type="text" name="field3" value="{{ account_detail.field3 }}">
+    <button type="submit">Update Account Details</button>
+  </form>
+  {{else}}
+  <p>Data not found</p>
+  {{/if}} --}}
+
   </div>
 </body>
 
+
 </html>
+
+{{!-- 
+<!-- Profile Page -->
+<h1>Profile Page</h1>
+<p>Welcome, {{ user.username }}!</p>
+
+<!-- Display Account Details -->
+<h2>Account Details</h2>
+{{#if account_detail}}
+  <ul>
+    <li>Field 1: {{ account_detail.field1 }}</li>
+    <li>Field 2: {{ account_detail.field2 }}</li>
+    <li>Field 3: {{ account_detail.field3 }}</li>
+  </ul>
+
+  <!-- Update Account Details Form -->
+  <h2>Update Account Details</h2>
+  <form action="/update-account-details" method="POST">
+    <input type="hidden" name="account_id" value="{{ account_detail.id }}">
+    <label for="field1">Field 1:</label>
+    <input type="text" name="field1" value="{{ account_detail.field1 }}">
+    <label for="field2">Field 2:</label>
+    <input type="text" name="field2" value="{{ account_detail.field2 }}">
+    <label for="field3">Field 3:</label>
+    <input type="text" name="field3" value="{{ account_detail.field3 }}">
+    <button type="submit">Update Account Details</button>
+  </form>
+{{else}}
+  <p>No account details found.</p>
+{{/if}}
+
+<!-- Add New Account Details Form -->
+<h2>Add New Account Details</h2>
+<form action="/add-account-details" method="POST">
+  <label for="field1">Field 1:</label>
+  <input type="text" name="field1">
+  <label for="field2">Field 2:</label>
+  <input type="text" name="field2">
+  <label for="field3">Field 3:</label>
+  <input type="text" name="field3">
+  <button type="submit">Add Account Details</button>
+</form> --}}
+
+
+
+
+
+{{!-- // Route to handle updating account details
+router.post('/update-account-details', userController.isLoggedIn, (req, res) => {
+  const { account_id, field1, field2, field3 } = req.body; // Assuming there are 3 fields to update
+
+  // Update the database with the new values
+  db.query(
+    'UPDATE ACCOUNT_DETAILS SET field1 = ?, field2 = ?, field3 = ? WHERE id = ?',
+    [field1, field2, field3, account_id],
+    (err, results) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send('Error updating account details');
+      } else {
+        res.redirect('/profile');
+      }
+    }
+  );
+}); --}}
+
+
+
+
+{{!-- 
+
+// Route to handle adding new account details
+router.post('/add-account-details', userController.isLoggedIn, (req, res) => {
+  const { field1, field2, field3 } = req.body; // Assuming there are 3 fields to add
+
+  // Insert the new values into the database
+  db.query(
+    'INSERT INTO ACCOUNT_DETAILS (USER_ID, field1, field2, field3) VALUES (?, ?, ?, ?)',
+    [req.user.Id, field1, field2, field3],
+    (err, results) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send('Error adding account details');
+      } else {
+        res.redirect('/profile');
+      }
+    }
+  );
+}); --}}

@@ -18,10 +18,10 @@
         <label for="user">User Id:</label>
         <input type="number" name="user_id" id="user_id">
       </div> --}}
-      <div class="data">
+      {{!-- <div class="data">
         <label for="order_id">Order Id:</label>
         <input type="number" name="order_id" id="order_id">
-      </div>
+      </div> --}}
       <div class="data">
         <label for="stock_symbol">Stock Symbol:</label>
         <input type="text" name="stock_symbol" id="stock_symbol" pattern="[A-Z]+">
@@ -56,6 +56,7 @@
           <th>Order_Type</th>
           <th>@ Price</th>
           <th>Shares</th>
+          <th>Action</th>
         </tr>
         {{#each order}}
         <tr>
@@ -65,6 +66,10 @@
           <td>{{ORDER_TYPE}}</td>
           <td>{{PURCHASE_PRICE}}</td>
           <td>{{SHARES}}</td>
+          <td>
+            <a href="/orders/delete/{{STOCK_SYMBOL}}"
+           class="btn btn-danger btn-sm">Delete</a>
+          </td> 
         </tr>
         {{/each}}
       </table>
@@ -75,7 +80,31 @@
 
 
 <script>
+function deleteOrder(orderId, row) {
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', '/orders');
+  xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+  xhr.onload = function() {
+    if (xhr.status === 200) {
+      // Remove the row from the table
+      row.parentNode.removeChild(row);
+    } else {
+      console.log('Error: ' + xhr.status);
+    }
+  };
+  xhr.send('order_id=' + encodeURIComponent(orderId));
+}
 
+window.addEventListener('load', function() {
+  var deleteButtons = document.querySelectorAll('.delete-button');
+  for (var i = 0; i < deleteButtons.length; i++) {
+    deleteButtons[i].addEventListener('click', function() {
+      var orderId = this.getAttribute('data-order-id');
+      var row = this.parentNode.parentNode;
+      deleteOrder(orderId, row);
+    });
+  }
+});
 </script>
 </body>
 

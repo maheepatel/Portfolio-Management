@@ -8,32 +8,39 @@
 
 
 <div class="portfolio-header">
-    <h1>{{user.name}}'s Portfolio</h1>
+    <h1>Portfolio</h1>
 </div>
 
   <div class="upper-portfolio">
     <img src="/images/user2.png" alt="" />
-    <p>Uer_id:{{user.Id}}</p>
+        {{#each Portfolio}}
+    <p>Uer_id: {{USER_ID}}</p>
   </div>
   <hr>
 
   <div class="middle-portfolio">
+
     <div class="portfolio-text">
     <p>Equity: </p>
+    <span>₹ {{EQUITY}}</span>
     </div>
     <div class="portfolio-text">
   <p>Cash: </p>
+   <span>₹ {{CASH}}</span>
     </div>
     <div class="portfolio-text">
     <p>Stocks: </p>
+     <span>{{STOCKS}}</span>
     </div>
     <div class="portfolio-text">
-    <p>P and L: </p>
+    <p>P&L: </p>
+     <span style="color: green">{{P_AND_L}}% </span>
     </div>
     <div class="portfolio-text">
     <p>Present Value: </p>
+     <span>₹ {{PRESENT_VALUE}}</span>
     </div>
-  
+  {{/each}}
 
 
   </div>
